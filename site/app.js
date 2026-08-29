@@ -1,5 +1,9 @@
 const SOURCES = ["opencode", "cursor", "openrouter", "gemini", "mistral"];
 
+function $(id) {
+  return document.getElementById(id);
+}
+
 function fmtTokens(n) {
   const v = Number(n) || 0;
   if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(2)}M`;
@@ -43,16 +47,21 @@ function toISODate(d) {
 }
 
 async function loadSummary() {
-  const paths = ["./data/summary.json", "../data/summary.json"];
+  const paths = [
+    `./data/summary.json?t=${Date.now()}`,
+    "../data/summary.json",
+  ];
+  let lastErr = null;
   for (const p of paths) {
     try {
       const res = await fetch(p, { cache: "no-store" });
       if (res.ok) return res.json();
-    } catch {
-      /* next */
+      lastErr = new Error(`${p} → ${res.status}`);
+    } catch (e) {
+      lastErr = e;
     }
   }
-  throw new Error("Could not load summary.json");
+  throw lastErr || new Error("Could not load summary.json");
 }
 
 function levelFor(tokens, max) {
@@ -67,9 +76,11 @@ function levelFor(tokens, max) {
 
 function buildYearDays(endISO) {
   const end = new Date(`${endISO}T12:00:00`);
+  if (Number.isNaN(end.getTime())) {
+    throw new Error(`Invalid end date: ${endISO}`);
+  }
   const start = new Date(end);
   start.setDate(start.getDate() - 364);
-  // Align to Sunday like GitHub
   start.setDate(start.getDate() - start.getDay());
 
   const days = [];
@@ -78,7 +89,6 @@ function buildYearDays(endISO) {
     days.push(toISODate(cur));
     cur.setDate(cur.getDate() + 1);
   }
-  // Pad to full weeks (Sun–Sat)
   while (days.length % 7 !== 0) {
     const next = new Date(`${days[days.length - 1]}T12:00:00`);
     next.setDate(next.getDate() + 1);
@@ -88,9 +98,11 @@ function buildYearDays(endISO) {
 }
 
 function renderMonths(days) {
-  const el = document.getElementById("months");
-  el.innerHTML = "";
-  el.style.gridTemplateColumns = `repeat(${days.length / 7}, calc(var(--cell) + var(--gap)))`;
+  const el = $("month-labels");
+  if (!el) return;
+  el.replaceChildren();
+  const weeks = Math.max(1, Math.round(days.length / 7));
+  el.style.gridTemplateColumns = `repeat(${weeks}, calc(var(--cell) + var(--gap)))`;
   let lastMonth = -1;
   for (let i = 0; i < days.length; i += 7) {
     const d = new Date(`${days[i]}T12:00:00`);
@@ -105,7 +117,8 @@ function renderMonths(days) {
 }
 
 function showTip(text, x, y) {
-  const tip = document.getElementById("tip");
+  const tip = $("tip");
+  if (!tip) return;
   tip.hidden = false;
   tip.textContent = text;
   const pad = 12;
@@ -114,12 +127,15 @@ function showTip(text, x, y) {
 }
 
 function hideTip() {
-  document.getElementById("tip").hidden = true;
+  const tip = $("tip");
+  if (tip) tip.hidden = true;
 }
 
 function renderDetail(day, data) {
-  const title = document.getElementById("detail-title");
-  const sub = document.getElementById("detail-sub");
+  const title = $("detail-title");
+  const sub = $("detail-sub");
+  if (!title || !sub) return;
+
   const tokens = data?.totals?.tokens || 0;
   const requests = data?.totals?.requests || 0;
   const cost = data?.totals?.costUsd || 0;
@@ -129,22 +145,34 @@ function renderDetail(day, data) {
     ? `${fmtTokens(tokens)} tokens across tracked sources`
     : "No tracked usage for this day yet.";
 
-  document.getElementById("detail-tokens").textContent = fmtTokens(tokens);
-  document.getElementById("detail-requests").textContent = String(requests || 0);
-  document.getElementById("detail-cost").textContent = fmtMoney(cost);
+  const dt = $("detail-tokens");
+  const dr = $("detail-requests");
+  const dc = $("detail-cost");
+  if (dt) dt.textContent = fmtTokens(tokens);
+  if (dr) dr.textContent = String(requests || 0);
+  if (dc) dc.textContent = fmtMoney(cost);
 
-  const bars = document.getElementById("source-bars");
-  bars.innerHTML = "";
+  const bars = $("source-bars");
+  if (!bars) return;
+  bars.replaceChildren();
   const bySource = data?.bySource || {};
   const max = Math.max(1, ...SOURCES.map((s) => bySource[s]?.tokens || 0));
   for (const s of SOURCES) {
     const t = bySource[s]?.tokens || 0;
     const row = document.createElement("div");
     row.className = "source-row";
-    row.innerHTML = `
-      <span>${s}</span>
-      <div class="bar-track"><div class="bar-fill" style="width:${(t / max) * 100}%"></div></div>
-      <span class="amt">${fmtTokens(t)}</span>`;
+    const name = document.createElement("span");
+    name.textContent = s;
+    const track = document.createElement("div");
+    track.className = "bar-track";
+    const fill = document.createElement("div");
+    fill.className = "bar-fill";
+    fill.style.width = `${(t / max) * 100}%`;
+    track.appendChild(fill);
+    const amt = document.createElement("span");
+    amt.className = "amt";
+    amt.textContent = fmtTokens(t);
+    row.append(name, track, amt);
     bars.appendChild(row);
   }
 }
@@ -160,15 +188,22 @@ function renderGraph(summary) {
   const activeDays = values.filter((v) => v > 0).length;
   const yearTokens = values.reduce((a, b) => a + b, 0);
 
-  document.getElementById("graph-summary").textContent =
-    `${fmtTokens(yearTokens)} tokens across ${activeDays} active day${activeDays === 1 ? "" : "s"} in the last year`;
-  document.getElementById("graph-range").textContent = `${start} → ${end}`;
-  document.getElementById("since-label").textContent = summary.since || "2026-08-28";
+  const gs = $("graph-summary");
+  const gr = $("graph-range");
+  const since = $("since-label");
+  if (gs) {
+    gs.textContent = `${fmtTokens(yearTokens)} tokens across ${activeDays} active day${
+      activeDays === 1 ? "" : "s"
+    } in the last year`;
+  }
+  if (gr) gr.textContent = `${start} → ${end}`;
+  if (since) since.textContent = summary.since || "2026-08-28";
 
   renderMonths(days);
 
-  const cells = document.getElementById("cells");
-  cells.innerHTML = "";
+  const cells = $("cells");
+  if (!cells) throw new Error("Missing #cells container");
+  cells.replaceChildren();
   let selectedBtn = null;
 
   days.forEach((day, idx) => {
@@ -178,10 +213,7 @@ function renderGraph(summary) {
     btn.type = "button";
     btn.className = `cell lvl${lvl}`;
     btn.dataset.date = day;
-    btn.setAttribute(
-      "aria-label",
-      `${day}: ${fmtTokens(tokens)} tokens`
-    );
+    btn.setAttribute("aria-label", `${day}: ${fmtTokens(tokens)} tokens`);
 
     const select = () => {
       if (selectedBtn) selectedBtn.classList.remove("selected");
@@ -192,76 +224,73 @@ function renderGraph(summary) {
 
     btn.addEventListener("click", select);
     btn.addEventListener("mouseenter", (e) => {
-      showTip(
-        `${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`,
-        e.clientX,
-        e.clientY
-      );
+      showTip(`${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`, e.clientX, e.clientY);
     });
     btn.addEventListener("mousemove", (e) => {
-      showTip(
-        `${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`,
-        e.clientX,
-        e.clientY
-      );
+      showTip(`${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`, e.clientX, e.clientY);
     });
     btn.addEventListener("mouseleave", hideTip);
     cells.appendChild(btn);
 
     if (day === today) select();
   });
+
+  // If today isn't in the grid for some reason, select latest day with data
+  if (!selectedBtn) {
+    const latest = [...(summary.series || [])].reverse().find((d) => d.totals?.tokens > 0);
+    if (latest) {
+      const btn = cells.querySelector(`[data-date="${latest.date}"]`);
+      if (btn) btn.click();
+      else renderDetail(latest.date, latest);
+    }
+  }
 }
 
 function renderTotals(summary) {
   const set = (id, tokens, metaId, cost, requests) => {
-    document.getElementById(id).textContent = fmtTokens(tokens);
-    document.getElementById(metaId).textContent =
-      `${fmtMoney(cost)} · ${requests || 0} requests`;
+    const el = $(id);
+    const meta = $(metaId);
+    if (el) el.textContent = fmtTokens(tokens);
+    if (meta) meta.textContent = `${fmtMoney(cost)} · ${requests || 0} requests`;
   };
-  set(
-    "today-tokens",
-    summary.totals.today.tokens,
-    "today-meta",
-    summary.totals.today.costUsd,
-    summary.totals.today.requests
-  );
-  set(
-    "week-tokens",
-    summary.totals.week.tokens,
-    "week-meta",
-    summary.totals.week.costUsd,
-    summary.totals.week.requests
-  );
-  set(
-    "all-tokens",
-    summary.totals.allTime.tokens,
-    "all-meta",
-    summary.totals.allTime.costUsd,
-    summary.totals.allTime.requests
-  );
 
-  const body = document.getElementById("source-table");
-  body.innerHTML = "";
+  const t = summary.totals || {};
+  set("today-tokens", t.today?.tokens, "today-meta", t.today?.costUsd, t.today?.requests);
+  set("week-tokens", t.week?.tokens, "week-meta", t.week?.costUsd, t.week?.requests);
+  set("all-tokens", t.allTime?.tokens, "all-meta", t.allTime?.costUsd, t.allTime?.requests);
+
+  const body = $("source-table");
+  if (!body) return;
+  body.replaceChildren();
   for (const s of SOURCES) {
     const row = summary.bySource?.[s] || {};
     const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td>${s}</td>
-      <td class="num">${fmtTokens(row.tokens)}</td>
-      <td class="num">${row.requests || 0}</td>
-      <td class="num">${fmtMoney(row.costUsd)}</td>`;
+    const cells = [
+      s,
+      fmtTokens(row.tokens),
+      String(row.requests || 0),
+      fmtMoney(row.costUsd),
+    ];
+    cells.forEach((text, i) => {
+      const td = document.createElement("td");
+      if (i > 0) td.className = "num";
+      td.textContent = text;
+      tr.appendChild(td);
+    });
     body.appendChild(tr);
   }
 }
 
 async function main() {
   const summary = await loadSummary();
-  document.getElementById("synced").textContent =
-    `Synced ${fmtWhen(summary.generatedAt)}`;
+  const synced = $("synced");
+  if (synced) synced.textContent = `Synced ${fmtWhen(summary.generatedAt)}`;
   renderGraph(summary);
   renderTotals(summary);
 }
 
 main().catch((err) => {
-  document.getElementById("synced").textContent = err.message;
+  const synced = $("synced");
+  if (synced) synced.textContent = err?.message || String(err);
+  console.error(err);
 });

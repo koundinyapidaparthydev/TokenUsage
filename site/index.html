@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
     <title>TokenUsage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,8 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=3" />
+    <script src="./app.js?v=3" defer></script>
   </head>
   <body>
     <div class="page">
@@ -28,7 +29,7 @@
 
         <div class="graph-scroll">
           <div class="graph-frame">
-            <div class="months" id="months" aria-hidden="true"></div>
+            <div class="months" id="month-labels" aria-hidden="true"></div>
             <div class="graph-body">
               <div class="dow" aria-hidden="true">
                 <span></span>
@@ -45,10 +46,17 @@
         </div>
 
         <div class="graph-foot">
-          <p class="hint">Hover a day for details. Tracking from <code id="since-label">2026-08-28</code>.</p>
+          <p class="hint">
+            Hover a day for details. Tracking from
+            <code id="since-label">2026-08-28</code>.
+          </p>
           <div class="legend" aria-hidden="true">
             <span>Less</span>
-            <i class="lvl0"></i><i class="lvl1"></i><i class="lvl2"></i><i class="lvl3"></i><i class="lvl4"></i>
+            <span class="swatch lvl0"></span>
+            <span class="swatch lvl1"></span>
+            <span class="swatch lvl2"></span>
+            <span class="swatch lvl3"></span>
+            <span class="swatch lvl4"></span>
             <span>More</span>
           </div>
         </div>
