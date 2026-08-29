@@ -1,0 +1,86 @@
+{
+  "date": "2026-08-29",
+  "sources": {
+    "opencode": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "cursor": {
+      "input": 1272288,
+      "output": 120735,
+      "cacheRead": 18681728,
+      "cacheWrite": 0,
+      "total": 20074751,
+      "tokens": 20074751,
+      "requests": 47,
+      "costUsd": 19.662853933572762,
+      "byModel": {
+        "default": {
+          "input": 936076,
+          "output": 75705,
+          "cacheRead": 6460928,
+          "cacheWrite": 0,
+          "total": 7472709,
+          "tokens": 7472709,
+          "requests": 27,
+          "costUsd": 5.55684599995613
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 336212,
+          "output": 45030,
+          "cacheRead": 12220800,
+          "cacheWrite": 0,
+          "total": 12602042,
+          "tokens": 12602042,
+          "requests": 20,
+          "costUsd": 14.106007933616636
+        }
+      }
+    },
+    "openrouter": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "gemini": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "mistral": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    }
+  },
+  "totals": {
+    "tokens": 20074751,
+    "costUsd": 19.662853933572762,
+    "requests": 47
+  }
+}

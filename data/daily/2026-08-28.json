@@ -13,15 +13,56 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
+      "input": 3551151,
+      "output": 281003,
+      "cacheRead": 45051904,
       "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "total": 48884058,
+      "tokens": 48884058,
+      "requests": 83,
+      "costUsd": 48.56633655518293,
+      "byModel": {
+        "cursor-grok-4.6-high-fast": {
+          "input": 1934681,
+          "output": 197475,
+          "cacheRead": 24492288,
+          "cacheWrite": 0,
+          "total": 26624444,
+          "tokens": 26624444,
+          "requests": 32,
+          "costUsd": 34.44592160671949
+        },
+        "default": {
+          "input": 1290351,
+          "output": 78625,
+          "cacheRead": 19617536,
+          "cacheWrite": 0,
+          "total": 20986512,
+          "tokens": 20986512,
+          "requests": 39,
+          "costUsd": 12.967718966007233
+        },
+        "cursor-grok-4.6-high": {
+          "input": 209139,
+          "output": 678,
+          "cacheRead": 408064,
+          "cacheWrite": 0,
+          "total": 617881,
+          "tokens": 617881,
+          "requests": 3,
+          "costUsd": 0.6263779926300049
+        },
+        "cursor-grok-4.5-high": {
+          "input": 116980,
+          "output": 4225,
+          "cacheRead": 534016,
+          "cacheWrite": 0,
+          "total": 655221,
+          "tokens": 655221,
+          "requests": 9,
+          "costUsd": 0.5263179898262024
+        }
+      }
     },
     "openrouter": {
       "input": 0,
@@ -79,8 +120,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 48884058,
+    "costUsd": 48.56633655518293,
+    "requests": 83
   }
 }

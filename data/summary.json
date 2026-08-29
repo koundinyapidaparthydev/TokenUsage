@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-08-29T06:05:47.652Z",
+  "generatedAt": "2026-08-29T06:09:41.645Z",
   "since": "2026-08-28",
   "today": "2026-08-28",
   "totals": {
     "today": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
+      "tokens": 48884058,
+      "costUsd": 48.56633655518293,
+      "requests": 83
     },
     "week": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
+      "tokens": 48884058,
+      "costUsd": 48.56633655518293,
+      "requests": 83
     },
     "allTime": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
+      "tokens": 68958809,
+      "costUsd": 68.22919048875569,
+      "requests": 130
     }
   },
   "bySource": {
@@ -26,9 +26,9 @@
       "requests": 0
     },
     "cursor": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
+      "tokens": 68958809,
+      "costUsd": 68.22919048875569,
+      "requests": 130
     },
     "openrouter": {
       "tokens": 0,
@@ -50,9 +50,9 @@
     {
       "date": "2026-08-28",
       "totals": {
-        "tokens": 0,
-        "costUsd": 0,
-        "requests": 0
+        "tokens": 48884058,
+        "costUsd": 48.56633655518293,
+        "requests": 83
       },
       "bySource": {
         "opencode": {
@@ -61,9 +61,9 @@
           "requests": 0
         },
         "cursor": {
-          "tokens": 0,
-          "costUsd": 0,
-          "requests": 0
+          "tokens": 48884058,
+          "costUsd": 48.56633655518293,
+          "requests": 83
         },
         "openrouter": {
           "tokens": 0,
@@ -94,15 +94,56 @@
           "byModel": {}
         },
         "cursor": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 3551151,
+          "output": 281003,
+          "cacheRead": 45051904,
           "cacheWrite": 0,
-          "total": 0,
-          "tokens": 0,
-          "requests": 0,
-          "costUsd": 0,
-          "byModel": {}
+          "total": 48884058,
+          "tokens": 48884058,
+          "requests": 83,
+          "costUsd": 48.56633655518293,
+          "byModel": {
+            "cursor-grok-4.6-high-fast": {
+              "input": 1934681,
+              "output": 197475,
+              "cacheRead": 24492288,
+              "cacheWrite": 0,
+              "total": 26624444,
+              "tokens": 26624444,
+              "requests": 32,
+              "costUsd": 34.44592160671949
+            },
+            "default": {
+              "input": 1290351,
+              "output": 78625,
+              "cacheRead": 19617536,
+              "cacheWrite": 0,
+              "total": 20986512,
+              "tokens": 20986512,
+              "requests": 39,
+              "costUsd": 12.967718966007233
+            },
+            "cursor-grok-4.6-high": {
+              "input": 209139,
+              "output": 678,
+              "cacheRead": 408064,
+              "cacheWrite": 0,
+              "total": 617881,
+              "tokens": 617881,
+              "requests": 3,
+              "costUsd": 0.6263779926300049
+            },
+            "cursor-grok-4.5-high": {
+              "input": 116980,
+              "output": 4225,
+              "cacheRead": 534016,
+              "cacheWrite": 0,
+              "total": 655221,
+              "tokens": 655221,
+              "requests": 9,
+              "costUsd": 0.5263179898262024
+            }
+          }
         },
         "openrouter": {
           "input": 0,
@@ -159,9 +200,154 @@
           "byModel": {}
         }
       }
+    },
+    {
+      "date": "2026-08-29",
+      "totals": {
+        "tokens": 20074751,
+        "costUsd": 19.662853933572762,
+        "requests": 47
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 20074751,
+          "costUsd": 19.662853933572762,
+          "requests": 47
+        },
+        "openrouter": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "mistral": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 1272288,
+          "output": 120735,
+          "cacheRead": 18681728,
+          "cacheWrite": 0,
+          "total": 20074751,
+          "tokens": 20074751,
+          "requests": 47,
+          "costUsd": 19.662853933572762,
+          "byModel": {
+            "default": {
+              "input": 936076,
+              "output": 75705,
+              "cacheRead": 6460928,
+              "cacheWrite": 0,
+              "total": 7472709,
+              "tokens": 7472709,
+              "requests": 27,
+              "costUsd": 5.55684599995613
+            },
+            "cursor-grok-4.6-high-fast": {
+              "input": 336212,
+              "output": 45030,
+              "cacheRead": 12220800,
+              "cacheWrite": 0,
+              "total": 12602042,
+              "tokens": 12602042,
+              "requests": 20,
+              "costUsd": 14.106007933616636
+            }
+          }
+        },
+        "openrouter": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "mistral": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
     }
   ],
   "models": [
+    {
+      "date": "2026-08-28",
+      "source": "cursor",
+      "model": "cursor-grok-4.6-high-fast",
+      "tokens": 26624444,
+      "costUsd": 34.44592160671949,
+      "requests": 32
+    },
+    {
+      "date": "2026-08-28",
+      "source": "cursor",
+      "model": "default",
+      "tokens": 20986512,
+      "costUsd": 12.967718966007233,
+      "requests": 39
+    },
+    {
+      "date": "2026-08-28",
+      "source": "cursor",
+      "model": "cursor-grok-4.6-high",
+      "tokens": 617881,
+      "costUsd": 0.6263779926300049,
+      "requests": 3
+    },
+    {
+      "date": "2026-08-28",
+      "source": "cursor",
+      "model": "cursor-grok-4.5-high",
+      "tokens": 655221,
+      "costUsd": 0.5263179898262024,
+      "requests": 9
+    },
     {
       "date": "2026-08-28",
       "source": "openrouter",
@@ -177,6 +363,22 @@
       "tokens": 0,
       "costUsd": 0,
       "requests": 0
+    },
+    {
+      "date": "2026-08-29",
+      "source": "cursor",
+      "model": "default",
+      "tokens": 7472709,
+      "costUsd": 5.55684599995613,
+      "requests": 27
+    },
+    {
+      "date": "2026-08-29",
+      "source": "cursor",
+      "model": "cursor-grok-4.6-high-fast",
+      "tokens": 12602042,
+      "costUsd": 14.106007933616636,
+      "requests": 20
     }
   ],
   "collectors": [
@@ -190,11 +392,12 @@
     },
     {
       "source": "cursor",
-      "dir": "/Users/koundinya.pidaparthy/Desktop/KpProjects/TokenUsage/data/imports/cursor",
-      "ok": false,
-      "skipped": true,
-      "files": [],
-      "reason": "No CSV files in data/imports/cursor (drop Dashboard Usage exports here)"
+      "mode": "session",
+      "ok": true,
+      "skipped": false,
+      "events": 130,
+      "days": 2,
+      "pages": 2
     },
     {
       "source": "openrouter",
