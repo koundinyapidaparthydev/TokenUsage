@@ -7,93 +7,114 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <div class="bg" aria-hidden="true"></div>
-    <header class="top">
-      <div class="brand">
-        <p class="brand-mark">TokenUsage</p>
-        <p class="brand-sub">AI tokens across Cursor, OpenCode, OpenRouter, Gemini &amp; Mistral</p>
-      </div>
-      <p class="synced" id="synced">Loading…</p>
-    </header>
+    <div class="page">
+      <header class="masthead">
+        <h1 class="brand">TokenUsage</h1>
+        <p class="synced" id="synced">Loading…</p>
+      </header>
 
-    <main>
-      <section class="hero-metrics" aria-label="Totals">
-        <article class="metric">
-          <h2>Today</h2>
-          <p class="value" id="today-tokens">—</p>
-          <p class="meta" id="today-meta"></p>
-        </article>
-        <article class="metric">
-          <h2>This week</h2>
-          <p class="value" id="week-tokens">—</p>
-          <p class="meta" id="week-meta"></p>
-        </article>
-        <article class="metric">
-          <h2>All time</h2>
-          <p class="value" id="all-tokens">—</p>
-          <p class="meta" id="all-meta"></p>
-        </article>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head">
-          <h2>Daily tokens by source</h2>
-          <div class="chips" id="source-chips" role="group" aria-label="Filter sources"></div>
+      <section class="graph-card" aria-label="Token activity">
+        <div class="graph-head">
+          <p class="graph-summary" id="graph-summary">— tokens in the last year</p>
+          <p class="graph-range" id="graph-range"></p>
         </div>
-        <div class="chart-wrap">
-          <canvas id="daily-chart" height="120"></canvas>
+
+        <div class="graph-scroll">
+          <div class="graph-frame">
+            <div class="months" id="months" aria-hidden="true"></div>
+            <div class="graph-body">
+              <div class="dow" aria-hidden="true">
+                <span></span>
+                <span>Mon</span>
+                <span></span>
+                <span>Wed</span>
+                <span></span>
+                <span>Fri</span>
+                <span></span>
+              </div>
+              <div class="cells" id="cells" role="grid" aria-label="Daily token heatmap"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="graph-foot">
+          <p class="hint">Hover a day for details. Tracking from <code id="since-label">2026-08-28</code>.</p>
+          <div class="legend" aria-hidden="true">
+            <span>Less</span>
+            <i class="lvl0"></i><i class="lvl1"></i><i class="lvl2"></i><i class="lvl3"></i><i class="lvl4"></i>
+            <span>More</span>
+          </div>
         </div>
       </section>
 
-      <section class="split">
-        <section class="panel">
-          <div class="panel-head"><h2>By source</h2></div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Source</th>
-                  <th>Tokens</th>
-                  <th>Requests</th>
-                  <th>Est. $</th>
-                </tr>
-              </thead>
-              <tbody id="source-table"></tbody>
-            </table>
-          </div>
-        </section>
-        <section class="panel">
-          <div class="panel-head"><h2>Model breakdown</h2></div>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Source</th>
-                  <th>Model</th>
-                  <th>Tokens</th>
-                  <th>Requests</th>
-                </tr>
-              </thead>
-              <tbody id="model-table"></tbody>
-            </table>
-          </div>
-        </section>
+      <section class="detail-card" id="detail">
+        <div class="detail-head">
+          <h2 id="detail-title">Select a day</h2>
+          <p class="detail-sub" id="detail-sub">Click a square on the graph.</p>
+        </div>
+        <div class="stat-row">
+          <article>
+            <h3>Tokens</h3>
+            <p class="stat" id="detail-tokens">—</p>
+          </article>
+          <article>
+            <h3>Requests</h3>
+            <p class="stat" id="detail-requests">—</p>
+          </article>
+          <article>
+            <h3>Est. cost</h3>
+            <p class="stat" id="detail-cost">—</p>
+          </article>
+        </div>
+        <div class="source-bars" id="source-bars"></div>
       </section>
-    </main>
 
-    <footer>
-      <p>
-        Aggregates only — no prompts. Data from
-        <code>2026-08-28</code> onward. Sync runs daily on the owner machine.
-      </p>
-    </footer>
+      <section class="totals-card">
+        <h2>How many tokens</h2>
+        <div class="totals-grid">
+          <article>
+            <h3>Today</h3>
+            <p class="stat" id="today-tokens">—</p>
+            <p class="meta" id="today-meta"></p>
+          </article>
+          <article>
+            <h3>This week</h3>
+            <p class="stat" id="week-tokens">—</p>
+            <p class="meta" id="week-meta"></p>
+          </article>
+          <article>
+            <h3>All tracked</h3>
+            <p class="stat" id="all-tokens">—</p>
+            <p class="meta" id="all-meta"></p>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Tokens</th>
+                <th>Requests</th>
+                <th>Est. $</th>
+              </tr>
+            </thead>
+            <tbody id="source-table"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+        <p>Aggregates only — no prompts. Cursor · OpenCode · OpenRouter · Gemini · Mistral</p>
+      </footer>
+    </div>
+
+    <div class="tip" id="tip" role="tooltip" hidden></div>
   </body>
 </html>
