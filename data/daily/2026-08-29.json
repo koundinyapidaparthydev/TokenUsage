@@ -2,35 +2,66 @@
   "date": "2026-08-29",
   "sources": {
     "opencode": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
+      "input": 72827,
+      "output": 3003,
+      "cacheRead": 164122,
       "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "total": 239952,
+      "tokens": 239952,
+      "requests": 21,
+      "costUsd": 0.02972205,
+      "byModel": {
+        "nemotron-3.5-lightning-free": {
+          "input": 43232,
+          "output": 1972,
+          "cacheRead": 115328,
+          "cacheWrite": 0,
+          "total": 160532,
+          "tokens": 160532,
+          "requests": 15,
+          "costUsd": 0
+        },
+        "gemini-3.7-flash": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 2,
+          "costUsd": 0
+        },
+        "gemini-3.6-flash": {
+          "input": 29595,
+          "output": 1031,
+          "cacheRead": 48794,
+          "cacheWrite": 0,
+          "total": 79420,
+          "tokens": 79420,
+          "requests": 4,
+          "costUsd": 0.02972205
+        }
+      }
     },
     "cursor": {
-      "input": 1438133,
-      "output": 138881,
-      "cacheRead": 20707712,
+      "input": 1670303,
+      "output": 152794,
+      "cacheRead": 25040896,
       "cacheWrite": 0,
-      "total": 22284726,
-      "tokens": 22284726,
-      "requests": 49,
-      "costUsd": 21.11641193032264,
+      "total": 26863993,
+      "tokens": 26863993,
+      "requests": 55,
+      "costUsd": 23.830821930170053,
       "byModel": {
         "default": {
-          "input": 1101921,
-          "output": 93851,
-          "cacheRead": 8486912,
+          "input": 1334091,
+          "output": 107764,
+          "cacheRead": 12820096,
           "cacheWrite": 0,
-          "total": 9682684,
-          "tokens": 9682684,
-          "requests": 29,
-          "costUsd": 7.010403996706007
+          "total": 14261951,
+          "tokens": 14261951,
+          "requests": 35,
+          "costUsd": 9.72481399655342
         },
         "cursor-grok-4.6-high-fast": {
           "input": 336212,
@@ -57,8 +88,8 @@
     }
   },
   "totals": {
-    "tokens": 22284726,
-    "costUsd": 21.11641193032264,
-    "requests": 49
+    "tokens": 27103945,
+    "costUsd": 23.860543980170053,
+    "requests": 76
   }
 }
