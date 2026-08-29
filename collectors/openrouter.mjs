@@ -45,7 +45,23 @@ export async function collectOpenRouter({ since }) {
   const end = todayLocal();
 
   try {
-    // Credits snapshot (lifetime totals — stored on end day for visibility)
+    // Key metadata + spend windows (works with normal API keys)
+    try {
+      const keyInfo = await fetchJson("https://openrouter.ai/api/v1/key", headers);
+      meta.key = {
+        isManagementKey: !!keyInfo?.data?.is_management_key,
+        isFreeTier: !!keyInfo?.data?.is_free_tier,
+        usage: keyInfo?.data?.usage ?? 0,
+        usageDaily: keyInfo?.data?.usage_daily ?? 0,
+        usageWeekly: keyInfo?.data?.usage_weekly ?? 0,
+        usageMonthly: keyInfo?.data?.usage_monthly ?? 0,
+        expiresAt: keyInfo?.data?.expires_at,
+      };
+    } catch (e) {
+      meta.keyError = e.message;
+    }
+
+    // Credits snapshot
     try {
       const credits = await fetchJson(
         "https://openrouter.ai/api/v1/credits",
@@ -111,22 +127,34 @@ export async function collectOpenRouter({ since }) {
       meta.analyticsError = e.message;
     }
 
-    // Fallback: if no daily analytics, stamp credit usage on today only as note
-    if (!analyticsOk && meta.credits?.total_usage != null) {
+    // Fallback for normal API keys: store spend windows on today
+    if (!analyticsOk && meta.key) {
       const day = end;
       if (!days[day]) days[day] = emptyDay(day);
-      days[day].sources.openrouter.costUsd = Number(meta.credits.total_usage) || 0;
-      days[day].sources.openrouter.byModel["_credits_lifetime"] = {
-        costUsd: Number(meta.credits.total_usage) || 0,
+      const src = days[day].sources.openrouter;
+      const daily = Number(meta.key.usageDaily) || 0;
+      const lifetime =
+        Number(meta.credits?.total_usage) || Number(meta.key.usage) || 0;
+      src.costUsd = daily || lifetime;
+      bumpModel(src.byModel, "_key_usage_daily", {
+        costUsd: daily,
         tokens: 0,
         requests: 0,
         input: 0,
         output: 0,
         total: 0,
-      };
+      });
+      bumpModel(src.byModel, "_key_usage_lifetime", {
+        costUsd: lifetime,
+        tokens: 0,
+        requests: 0,
+        input: 0,
+        output: 0,
+        total: 0,
+      });
       recomputeTotals(days[day]);
       meta.note =
-        "Analytics unavailable; stored lifetime credit usage on today only. Prefer a management key for daily tokens.";
+        "Normal API key: daily model/token analytics need a management key. Stored spend from /api/v1/key + /credits.";
     }
 
     meta.ok = true;

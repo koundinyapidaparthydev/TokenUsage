@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T05:59:44.733Z",
+  "generatedAt": "2026-08-29T06:02:03.022Z",
   "since": "2026-08-28",
   "today": "2026-08-28",
   "totals": {
@@ -113,7 +113,28 @@
           "tokens": 0,
           "requests": 0,
           "costUsd": 0,
-          "byModel": {}
+          "byModel": {
+            "_key_usage_daily": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0,
+              "tokens": 0,
+              "requests": 0,
+              "costUsd": 0
+            },
+            "_key_usage_lifetime": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0,
+              "tokens": 0,
+              "requests": 0,
+              "costUsd": 0
+            }
+          }
         },
         "gemini": {
           "input": 0,
@@ -140,7 +161,24 @@
       }
     }
   ],
-  "models": [],
+  "models": [
+    {
+      "date": "2026-08-28",
+      "source": "openrouter",
+      "model": "_key_usage_daily",
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    {
+      "date": "2026-08-28",
+      "source": "openrouter",
+      "model": "_key_usage_lifetime",
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    }
+  ],
   "collectors": [
     {
       "source": "opencode",
@@ -160,9 +198,24 @@
     },
     {
       "source": "openrouter",
-      "ok": false,
-      "skipped": true,
-      "reason": "OPENROUTER_API_KEY not set"
+      "ok": true,
+      "skipped": false,
+      "key": {
+        "isManagementKey": false,
+        "isFreeTier": true,
+        "usage": 0,
+        "usageDaily": 0,
+        "usageWeekly": 0,
+        "usageMonthly": 0,
+        "expiresAt": "2027-08-29T05:55:03.170Z"
+      },
+      "credits": {
+        "total_credits": 0,
+        "total_usage": 0
+      },
+      "analyticsError": "OpenRouter 403: {\"error\":{\"message\":\"Only management keys can access analytics\",\"code\":403}}",
+      "note": "Normal API key: daily model/token analytics need a management key. Stored spend from /api/v1/key + /credits.",
+      "days": 1
     },
     {
       "source": "mistral",
