@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-08-29T05:59:44.733Z",
+  "since": "2026-08-28",
+  "today": "2026-08-28",
+  "totals": {
+    "today": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "week": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "allTime": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    }
+  },
+  "bySource": {
+    "opencode": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "cursor": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "openrouter": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "gemini": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    },
+    "mistral": {
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
+    }
+  },
+  "series": [
+    {
+      "date": "2026-08-28",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "openrouter": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "mistral": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "openrouter": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "mistral": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
+    }
+  ],
+  "models": [],
+  "collectors": [
+    {
+      "source": "opencode",
+      "dbPath": "/Users/koundinya.pidaparthy/.local/share/opencode/opencode.db",
+      "ok": true,
+      "skipped": false,
+      "messages": 2120,
+      "days": 0
+    },
+    {
+      "source": "cursor",
+      "dir": "/Users/koundinya.pidaparthy/Desktop/KpProjects/TokenUsage/data/imports/cursor",
+      "ok": false,
+      "skipped": true,
+      "files": [],
+      "reason": "No CSV files in data/imports/cursor (drop Dashboard Usage exports here)"
+    },
+    {
+      "source": "openrouter",
+      "ok": false,
+      "skipped": true,
+      "reason": "OPENROUTER_API_KEY not set"
+    },
+    {
+      "source": "mistral",
+      "ok": false,
+      "skipped": true,
+      "reason": "MISTRAL_ADMIN_API_KEY not set"
+    },
+    {
+      "source": "gemini",
+      "ok": false,
+      "skipped": true,
+      "reason": "GOOGLE_APPLICATION_CREDENTIALS not set — Gemini API key alone cannot read usage. Add a GCP SA with Monitoring Viewer."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "tokenusage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-provider AI token usage tracker with GitHub Pages dashboard",
+  "scripts": {
+    "sync": "node scripts/sync.mjs",
+    "sync:push": "node scripts/sync.mjs --push"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

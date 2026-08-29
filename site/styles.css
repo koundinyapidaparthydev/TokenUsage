@@ -1,0 +1,236 @@
+:root {
+  --bg0: #12151a;
+  --bg1: #1a1f27;
+  --ink: #eef2f6;
+  --muted: #93a0b0;
+  --line: rgba(238, 242, 246, 0.1);
+  --accent: #2ec4b6;
+  --accent-dim: rgba(46, 196, 182, 0.16);
+  --card: rgba(26, 31, 39, 0.86);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --opencode: #2ec4b6;
+  --cursor: #7eb6ff;
+  --openrouter: #f0a202;
+  --gemini: #8fd694;
+  --mistral: #f28482;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg0);
+  line-height: 1.45;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(46, 196, 182, 0.18), transparent 55%),
+    radial-gradient(700px 420px at 100% 0%, rgba(126, 182, 255, 0.12), transparent 50%),
+    linear-gradient(180deg, #0e1116 0%, #161b22 45%, #10141a 100%);
+}
+
+.top {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
+.brand-mark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.brand-sub {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.synced {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.metric,
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.metric {
+  padding: 1.25rem 1.35rem 1.4rem;
+}
+
+.metric h2,
+.panel-head h2 {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.metric .value {
+  margin: 0.55rem 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.metric .meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.panel {
+  padding: 1.2rem 1.25rem 1.35rem;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.chip.active {
+  background: var(--accent-dim);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  color: var(--accent);
+}
+
+.chart-wrap {
+  position: relative;
+  min-height: 280px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.25rem;
+}
+
+.table-wrap {
+  overflow: auto;
+  max-height: 360px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+th {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+td.num {
+  font-variant-numeric: tabular-nums;
+}
+
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+footer code {
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .hero-metrics,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .synced {
+    text-align: left;
+  }
+}

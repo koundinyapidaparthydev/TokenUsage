@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TokenUsage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+    <header class="top">
+      <div class="brand">
+        <p class="brand-mark">TokenUsage</p>
+        <p class="brand-sub">AI tokens across Cursor, OpenCode, OpenRouter, Gemini &amp; Mistral</p>
+      </div>
+      <p class="synced" id="synced">Loading…</p>
+    </header>
+
+    <main>
+      <section class="hero-metrics" aria-label="Totals">
+        <article class="metric">
+          <h2>Today</h2>
+          <p class="value" id="today-tokens">—</p>
+          <p class="meta" id="today-meta"></p>
+        </article>
+        <article class="metric">
+          <h2>This week</h2>
+          <p class="value" id="week-tokens">—</p>
+          <p class="meta" id="week-meta"></p>
+        </article>
+        <article class="metric">
+          <h2>All time</h2>
+          <p class="value" id="all-tokens">—</p>
+          <p class="meta" id="all-meta"></p>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Daily tokens by source</h2>
+          <div class="chips" id="source-chips" role="group" aria-label="Filter sources"></div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="daily-chart" height="120"></canvas>
+        </div>
+      </section>
+
+      <section class="split">
+        <section class="panel">
+          <div class="panel-head"><h2>By source</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Tokens</th>
+                  <th>Requests</th>
+                  <th>Est. $</th>
+                </tr>
+              </thead>
+              <tbody id="source-table"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel">
+          <div class="panel-head"><h2>Model breakdown</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Model</th>
+                  <th>Tokens</th>
+                  <th>Requests</th>
+                </tr>
+              </thead>
+              <tbody id="model-table"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Aggregates only — no prompts. Data from
+        <code>2026-08-28</code> onward. Sync runs daily on the owner machine.
+      </p>
+    </footer>
+  </body>
+</html>
