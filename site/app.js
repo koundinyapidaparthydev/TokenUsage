@@ -1,4 +1,4 @@
-const SOURCES = ["opencode", "cursor", "openrouter", "gemini", "mistral"];
+const SOURCES = ["opencode", "cursor", "gemini"];
 
 function $(id) {
   return document.getElementById(id);
@@ -74,14 +74,23 @@ function levelFor(tokens, max) {
   return 4;
 }
 
-function buildYearDays(endISO) {
-  const end = new Date(`${endISO}T12:00:00`);
-  if (Number.isNaN(end.getTime())) {
-    throw new Error(`Invalid end date: ${endISO}`);
+/** Start at tracking start; keep ~1 year of remaining empty slots ahead. */
+function buildGraphDays(sinceISO, todayISO) {
+  const since = new Date(`${sinceISO}T12:00:00`);
+  const today = new Date(`${(todayISO || sinceISO)}T12:00:00`);
+  if (Number.isNaN(since.getTime())) throw new Error(`Invalid since: ${sinceISO}`);
+
+  const start = new Date(since);
+  start.setDate(start.getDate() - start.getDay()); // align to Sunday
+
+  const end = new Date(since);
+  end.setDate(end.getDate() + 364); // remaining year of slots from tracking start
+  if (today > end) {
+    end.setTime(today.getTime());
+    while ((Math.floor((end - start) / 86400000) + 1) % 7 !== 0) {
+      end.setDate(end.getDate() + 1);
+    }
   }
-  const start = new Date(end);
-  start.setDate(start.getDate() - 364);
-  start.setDate(start.getDate() - start.getDay());
 
   const days = [];
   const cur = new Date(start);
@@ -89,12 +98,13 @@ function buildYearDays(endISO) {
     days.push(toISODate(cur));
     cur.setDate(cur.getDate() + 1);
   }
-  while (days.length % 7 !== 0) {
-    const next = new Date(`${days[days.length - 1]}T12:00:00`);
-    next.setDate(next.getDate() + 1);
-    days.push(toISODate(next));
-  }
-  return { days, start: days[0], end: endISO };
+  return {
+    days,
+    start: days[0],
+    end: toISODate(end),
+    since: sinceISO,
+    today: toISODate(today),
+  };
 }
 
 function renderMonths(days) {
@@ -131,7 +141,7 @@ function hideTip() {
   if (tip) tip.hidden = true;
 }
 
-function renderDetail(day, data) {
+function renderDetail(day, data, isFuture) {
   const title = $("detail-title");
   const sub = $("detail-sub");
   if (!title || !sub) return;
@@ -141,9 +151,13 @@ function renderDetail(day, data) {
   const cost = data?.totals?.costUsd || 0;
 
   title.textContent = fmtDayLabel(day);
-  sub.textContent = data
-    ? `${fmtTokens(tokens)} tokens across tracked sources`
-    : "No tracked usage for this day yet.";
+  if (isFuture) {
+    sub.textContent = "Future slot — no usage yet.";
+  } else {
+    sub.textContent = data
+      ? `${fmtTokens(tokens)} tokens across OpenCode, Cursor & Gemini`
+      : "No tracked usage for this day yet.";
+  }
 
   const dt = $("detail-tokens");
   const dr = $("detail-requests");
@@ -181,8 +195,9 @@ function renderGraph(summary) {
   const byDate = Object.fromEntries(
     (summary.series || []).map((d) => [d.date, d])
   );
+  const since = summary.since || summary.today || toISODate(new Date());
   const today = summary.today || toISODate(new Date());
-  const { days, start, end } = buildYearDays(today);
+  const { days, start, end } = buildGraphDays(since, today);
   const values = days.map((d) => byDate[d]?.totals?.tokens || 0);
   const max = Math.max(0, ...values);
   const activeDays = values.filter((v) => v > 0).length;
@@ -190,14 +205,14 @@ function renderGraph(summary) {
 
   const gs = $("graph-summary");
   const gr = $("graph-range");
-  const since = $("since-label");
+  const sinceEl = $("since-label");
   if (gs) {
     gs.textContent = `${fmtTokens(yearTokens)} tokens across ${activeDays} active day${
       activeDays === 1 ? "" : "s"
-    } in the last year`;
+    } since tracking started`;
   }
   if (gr) gr.textContent = `${start} → ${end}`;
-  if (since) since.textContent = summary.since || "2026-08-28";
+  if (sinceEl) sinceEl.textContent = since;
 
   renderMonths(days);
 
@@ -209,25 +224,41 @@ function renderGraph(summary) {
   days.forEach((day, idx) => {
     const tokens = values[idx];
     const lvl = levelFor(tokens, max);
+    const isFuture = day > today;
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = `cell lvl${lvl}`;
+    btn.className = `cell lvl${lvl}${isFuture ? " future" : ""}`;
     btn.dataset.date = day;
-    btn.setAttribute("aria-label", `${day}: ${fmtTokens(tokens)} tokens`);
+    btn.setAttribute(
+      "aria-label",
+      isFuture ? `${day}: upcoming` : `${day}: ${fmtTokens(tokens)} tokens`
+    );
 
     const select = () => {
       if (selectedBtn) selectedBtn.classList.remove("selected");
       selectedBtn = btn;
       btn.classList.add("selected");
-      renderDetail(day, byDate[day] || null);
+      renderDetail(day, byDate[day] || null, isFuture);
     };
 
     btn.addEventListener("click", select);
     btn.addEventListener("mouseenter", (e) => {
-      showTip(`${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`, e.clientX, e.clientY);
+      showTip(
+        isFuture
+          ? `${fmtDayLabel(day)} · upcoming`
+          : `${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`,
+        e.clientX,
+        e.clientY
+      );
     });
     btn.addEventListener("mousemove", (e) => {
-      showTip(`${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`, e.clientX, e.clientY);
+      showTip(
+        isFuture
+          ? `${fmtDayLabel(day)} · upcoming`
+          : `${fmtDayLabel(day)} · ${fmtTokens(tokens)} tokens`,
+        e.clientX,
+        e.clientY
+      );
     });
     btn.addEventListener("mouseleave", hideTip);
     cells.appendChild(btn);
@@ -235,13 +266,14 @@ function renderGraph(summary) {
     if (day === today) select();
   });
 
-  // If today isn't in the grid for some reason, select latest day with data
   if (!selectedBtn) {
-    const latest = [...(summary.series || [])].reverse().find((d) => d.totals?.tokens > 0);
+    const latest = [...(summary.series || [])]
+      .reverse()
+      .find((d) => (d.totals?.tokens || 0) > 0);
     if (latest) {
       const btn = cells.querySelector(`[data-date="${latest.date}"]`);
       if (btn) btn.click();
-      else renderDetail(latest.date, latest);
+      else renderDetail(latest.date, latest, false);
     }
   }
 }
@@ -265,18 +297,14 @@ function renderTotals(summary) {
   for (const s of SOURCES) {
     const row = summary.bySource?.[s] || {};
     const tr = document.createElement("tr");
-    const cells = [
-      s,
-      fmtTokens(row.tokens),
-      String(row.requests || 0),
-      fmtMoney(row.costUsd),
-    ];
-    cells.forEach((text, i) => {
-      const td = document.createElement("td");
-      if (i > 0) td.className = "num";
-      td.textContent = text;
-      tr.appendChild(td);
-    });
+    [s, fmtTokens(row.tokens), String(row.requests || 0), fmtMoney(row.costUsd)].forEach(
+      (text, i) => {
+        const td = document.createElement("td");
+        if (i > 0) td.className = "num";
+        td.textContent = text;
+        tr.appendChild(td);
+      }
+    );
     body.appendChild(tr);
   }
 }

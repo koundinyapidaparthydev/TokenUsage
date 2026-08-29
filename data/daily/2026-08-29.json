@@ -13,24 +13,24 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 1272288,
-      "output": 120735,
-      "cacheRead": 18681728,
+      "input": 1438133,
+      "output": 138881,
+      "cacheRead": 20707712,
       "cacheWrite": 0,
-      "total": 20074751,
-      "tokens": 20074751,
-      "requests": 47,
-      "costUsd": 19.662853933572762,
+      "total": 22284726,
+      "tokens": 22284726,
+      "requests": 49,
+      "costUsd": 21.11641193032264,
       "byModel": {
         "default": {
-          "input": 936076,
-          "output": 75705,
-          "cacheRead": 6460928,
+          "input": 1101921,
+          "output": 93851,
+          "cacheRead": 8486912,
           "cacheWrite": 0,
-          "total": 7472709,
-          "tokens": 7472709,
-          "requests": 27,
-          "costUsd": 5.55684599995613
+          "total": 9682684,
+          "tokens": 9682684,
+          "requests": 29,
+          "costUsd": 7.010403996706007
         },
         "cursor-grok-4.6-high-fast": {
           "input": 336212,
@@ -44,29 +44,7 @@
         }
       }
     },
-    "openrouter": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
-    },
     "gemini": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
-    },
-    "mistral": {
       "input": 0,
       "output": 0,
       "cacheRead": 0,
@@ -79,8 +57,8 @@
     }
   },
   "totals": {
-    "tokens": 20074751,
-    "costUsd": 19.662853933572762,
-    "requests": 47
+    "tokens": 22284726,
+    "costUsd": 21.11641193032264,
+    "requests": 49
   }
 }

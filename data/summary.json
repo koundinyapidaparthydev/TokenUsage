@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T06:09:41.645Z",
+  "generatedAt": "2026-08-29T06:15:39.791Z",
   "since": "2026-08-28",
   "today": "2026-08-28",
   "totals": {
@@ -14,9 +14,9 @@
       "requests": 83
     },
     "allTime": {
-      "tokens": 68958809,
-      "costUsd": 68.22919048875569,
-      "requests": 130
+      "tokens": 71168784,
+      "costUsd": 69.68274848550557,
+      "requests": 132
     }
   },
   "bySource": {
@@ -26,21 +26,11 @@
       "requests": 0
     },
     "cursor": {
-      "tokens": 68958809,
-      "costUsd": 68.22919048875569,
-      "requests": 130
-    },
-    "openrouter": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
+      "tokens": 71168784,
+      "costUsd": 69.68274848550557,
+      "requests": 132
     },
     "gemini": {
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
-    },
-    "mistral": {
       "tokens": 0,
       "costUsd": 0,
       "requests": 0
@@ -65,17 +55,7 @@
           "costUsd": 48.56633655518293,
           "requests": 83
         },
-        "openrouter": {
-          "tokens": 0,
-          "costUsd": 0,
-          "requests": 0
-        },
         "gemini": {
-          "tokens": 0,
-          "costUsd": 0,
-          "requests": 0
-        },
-        "mistral": {
           "tokens": 0,
           "costUsd": 0,
           "requests": 0
@@ -145,50 +125,7 @@
             }
           }
         },
-        "openrouter": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0,
-          "total": 0,
-          "tokens": 0,
-          "requests": 0,
-          "costUsd": 0,
-          "byModel": {
-            "_key_usage_daily": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0,
-              "total": 0,
-              "tokens": 0,
-              "requests": 0,
-              "costUsd": 0
-            },
-            "_key_usage_lifetime": {
-              "input": 0,
-              "output": 0,
-              "cacheRead": 0,
-              "cacheWrite": 0,
-              "total": 0,
-              "tokens": 0,
-              "requests": 0,
-              "costUsd": 0
-            }
-          }
-        },
         "gemini": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0,
-          "total": 0,
-          "tokens": 0,
-          "requests": 0,
-          "costUsd": 0,
-          "byModel": {}
-        },
-        "mistral": {
           "input": 0,
           "output": 0,
           "cacheRead": 0,
@@ -204,9 +141,9 @@
     {
       "date": "2026-08-29",
       "totals": {
-        "tokens": 20074751,
-        "costUsd": 19.662853933572762,
-        "requests": 47
+        "tokens": 22284726,
+        "costUsd": 21.11641193032264,
+        "requests": 49
       },
       "bySource": {
         "opencode": {
@@ -215,21 +152,11 @@
           "requests": 0
         },
         "cursor": {
-          "tokens": 20074751,
-          "costUsd": 19.662853933572762,
-          "requests": 47
-        },
-        "openrouter": {
-          "tokens": 0,
-          "costUsd": 0,
-          "requests": 0
+          "tokens": 22284726,
+          "costUsd": 21.11641193032264,
+          "requests": 49
         },
         "gemini": {
-          "tokens": 0,
-          "costUsd": 0,
-          "requests": 0
-        },
-        "mistral": {
           "tokens": 0,
           "costUsd": 0,
           "requests": 0
@@ -248,24 +175,24 @@
           "byModel": {}
         },
         "cursor": {
-          "input": 1272288,
-          "output": 120735,
-          "cacheRead": 18681728,
+          "input": 1438133,
+          "output": 138881,
+          "cacheRead": 20707712,
           "cacheWrite": 0,
-          "total": 20074751,
-          "tokens": 20074751,
-          "requests": 47,
-          "costUsd": 19.662853933572762,
+          "total": 22284726,
+          "tokens": 22284726,
+          "requests": 49,
+          "costUsd": 21.11641193032264,
           "byModel": {
             "default": {
-              "input": 936076,
-              "output": 75705,
-              "cacheRead": 6460928,
+              "input": 1101921,
+              "output": 93851,
+              "cacheRead": 8486912,
               "cacheWrite": 0,
-              "total": 7472709,
-              "tokens": 7472709,
-              "requests": 27,
-              "costUsd": 5.55684599995613
+              "total": 9682684,
+              "tokens": 9682684,
+              "requests": 29,
+              "costUsd": 7.010403996706007
             },
             "cursor-grok-4.6-high-fast": {
               "input": 336212,
@@ -279,29 +206,7 @@
             }
           }
         },
-        "openrouter": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0,
-          "total": 0,
-          "tokens": 0,
-          "requests": 0,
-          "costUsd": 0,
-          "byModel": {}
-        },
         "gemini": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0,
-          "total": 0,
-          "tokens": 0,
-          "requests": 0,
-          "costUsd": 0,
-          "byModel": {}
-        },
-        "mistral": {
           "input": 0,
           "output": 0,
           "cacheRead": 0,
@@ -349,28 +254,12 @@
       "requests": 9
     },
     {
-      "date": "2026-08-28",
-      "source": "openrouter",
-      "model": "_key_usage_daily",
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
-    },
-    {
-      "date": "2026-08-28",
-      "source": "openrouter",
-      "model": "_key_usage_lifetime",
-      "tokens": 0,
-      "costUsd": 0,
-      "requests": 0
-    },
-    {
       "date": "2026-08-29",
       "source": "cursor",
       "model": "default",
-      "tokens": 7472709,
-      "costUsd": 5.55684599995613,
-      "requests": 27
+      "tokens": 9682684,
+      "costUsd": 7.010403996706007,
+      "requests": 29
     },
     {
       "date": "2026-08-29",
@@ -395,36 +284,9 @@
       "mode": "session",
       "ok": true,
       "skipped": false,
-      "events": 130,
+      "events": 132,
       "days": 2,
       "pages": 2
-    },
-    {
-      "source": "openrouter",
-      "ok": true,
-      "skipped": false,
-      "key": {
-        "isManagementKey": false,
-        "isFreeTier": true,
-        "usage": 0,
-        "usageDaily": 0,
-        "usageWeekly": 0,
-        "usageMonthly": 0,
-        "expiresAt": "2027-08-29T05:55:03.170Z"
-      },
-      "credits": {
-        "total_credits": 0,
-        "total_usage": 0
-      },
-      "analyticsError": "OpenRouter 403: {\"error\":{\"message\":\"Only management keys can access analytics\",\"code\":403}}",
-      "note": "Normal API key: daily model/token analytics need a management key. Stored spend from /api/v1/key + /credits.",
-      "days": 1
-    },
-    {
-      "source": "mistral",
-      "ok": false,
-      "skipped": true,
-      "reason": "MISTRAL_ADMIN_API_KEY not set"
     },
     {
       "source": "gemini",

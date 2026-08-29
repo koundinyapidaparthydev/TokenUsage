@@ -181,9 +181,8 @@ body {
 .cell.lvl4 {
   background: var(--lvl4);
 }
-.cell.selected {
-  outline: 2px solid var(--ink);
-  outline-offset: 1px;
+.cell.future {
+  opacity: 0.45;
 }
 
 .graph-foot {

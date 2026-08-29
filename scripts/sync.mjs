@@ -7,14 +7,11 @@ import { todayLocal, daysBetween } from "../lib/dates.mjs";
 import {
   SOURCES,
   emptyDay,
-  mergeSource,
   recomputeTotals,
   sourceTokens,
 } from "../lib/schema.mjs";
 import { collectOpenCode } from "../collectors/opencode.mjs";
 import { collectCursor } from "../collectors/cursor.mjs";
-import { collectOpenRouter } from "../collectors/openrouter.mjs";
-import { collectMistral } from "../collectors/mistral.mjs";
 import { collectGemini } from "../collectors/gemini.mjs";
 
 loadEnv();
@@ -45,20 +42,26 @@ function loadExistingDays() {
   return map;
 }
 
+function pruneSources(day) {
+  const next = emptyDay(day.date);
+  for (const name of SOURCES) {
+    if (day.sources?.[name]) next.sources[name] = day.sources[name];
+  }
+  return recomputeTotals(next);
+}
+
 function mergeCollectorDays(base, incoming, sourceName) {
   for (const [date, day] of Object.entries(incoming)) {
     if (!base[date]) base[date] = emptyDay(date);
     // Replace this source's slice from collector (idempotent re-sync)
     base[date].sources[sourceName] = day.sources[sourceName];
-    recomputeTotals(base[date]);
+    base[date] = pruneSources(base[date]);
   }
 }
 
 const collectors = [
   ["opencode", collectOpenCode],
   ["cursor", collectCursor],
-  ["openrouter", collectOpenRouter],
-  ["mistral", collectMistral],
   ["gemini", collectGemini],
 ];
 
@@ -68,6 +71,7 @@ const merged = loadExistingDays();
 // Ensure skeleton days from since..today exist
 for (const d of daysBetween(since, today)) {
   if (!merged[d]) merged[d] = emptyDay(d);
+  else merged[d] = pruneSources(merged[d]);
 }
 
 console.log(`TokenUsage sync since ${since} → ${today}`);
@@ -95,7 +99,7 @@ for (const [name, fn] of collectors) {
 const written = [];
 for (const date of Object.keys(merged).sort()) {
   if (date < since) continue;
-  recomputeTotals(merged[date]);
+  merged[date] = pruneSources(merged[date]);
   const path = resolve(dailyDir, `${date}.json`);
   writeFileSync(path, JSON.stringify(merged[date], null, 2) + "\n");
   written.push(date);
