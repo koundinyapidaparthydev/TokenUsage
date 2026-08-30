@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-08-29T16:00:06.361Z",
+  "generatedAt": "2026-08-30T16:08:02.868Z",
   "since": "2026-08-28",
-  "today": "2026-08-29",
+  "today": "2026-08-30",
   "totals": {
     "today": {
-      "tokens": 27103945,
-      "costUsd": 23.860543980170053,
-      "requests": 76
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
     },
     "week": {
-      "tokens": 75988003,
-      "costUsd": 72.42688053535298,
-      "requests": 159
+      "tokens": 81610247,
+      "costUsd": 77.8556692615775,
+      "requests": 192
     },
     "allTime": {
-      "tokens": 75988003,
-      "costUsd": 72.42688053535298,
-      "requests": 159
+      "tokens": 81610247,
+      "costUsd": 77.8556692615775,
+      "requests": 192
     }
   },
   "bySource": {
     "opencode": {
-      "tokens": 239952,
-      "costUsd": 0.02972205,
-      "requests": 21
+      "tokens": 525921,
+      "costUsd": 0.151994775,
+      "requests": 33
     },
     "cursor": {
-      "tokens": 75748051,
-      "costUsd": 72.39715848535297,
-      "requests": 138
+      "tokens": 81084326,
+      "costUsd": 77.7036744865775,
+      "requests": 159
     },
     "gemini": {
       "tokens": 0,
@@ -141,20 +141,20 @@
     {
       "date": "2026-08-29",
       "totals": {
-        "tokens": 27103945,
-        "costUsd": 23.860543980170053,
-        "requests": 76
+        "tokens": 32726189,
+        "costUsd": 29.28933270639457,
+        "requests": 109
       },
       "bySource": {
         "opencode": {
-          "tokens": 239952,
-          "costUsd": 0.02972205,
-          "requests": 21
+          "tokens": 525921,
+          "costUsd": 0.151994775,
+          "requests": 33
         },
         "cursor": {
-          "tokens": 26863993,
-          "costUsd": 23.830821930170053,
-          "requests": 55
+          "tokens": 32200268,
+          "costUsd": 29.137337931394573,
+          "requests": 76
         },
         "gemini": {
           "tokens": 0,
@@ -164,14 +164,14 @@
       },
       "sources": {
         "opencode": {
-          "input": 72827,
-          "output": 3003,
-          "cacheRead": 164122,
+          "input": 209697,
+          "output": 5299,
+          "cacheRead": 310925,
           "cacheWrite": 0,
-          "total": 239952,
-          "tokens": 239952,
-          "requests": 21,
-          "costUsd": 0.02972205,
+          "total": 525921,
+          "tokens": 525921,
+          "requests": 33,
+          "costUsd": 0.151994775,
           "byModel": {
             "nemotron-3.5-lightning-free": {
               "input": 43232,
@@ -194,48 +194,108 @@
               "costUsd": 0
             },
             "gemini-3.6-flash": {
-              "input": 29595,
-              "output": 1031,
-              "cacheRead": 48794,
+              "input": 166465,
+              "output": 3327,
+              "cacheRead": 195597,
               "cacheWrite": 0,
-              "total": 79420,
-              "tokens": 79420,
-              "requests": 4,
-              "costUsd": 0.02972205
+              "total": 365389,
+              "tokens": 365389,
+              "requests": 16,
+              "costUsd": 0.151994775
             }
           }
         },
         "cursor": {
-          "input": 1670303,
-          "output": 152794,
-          "cacheRead": 25040896,
+          "input": 2377352,
+          "output": 185156,
+          "cacheRead": 29637760,
           "cacheWrite": 0,
-          "total": 26863993,
-          "tokens": 26863993,
-          "requests": 55,
-          "costUsd": 23.830821930170053,
+          "total": 32200268,
+          "tokens": 32200268,
+          "requests": 76,
+          "costUsd": 29.137337931394573,
           "byModel": {
             "default": {
-              "input": 1334091,
-              "output": 107764,
-              "cacheRead": 12820096,
+              "input": 1616867,
+              "output": 121688,
+              "cacheRead": 16535680,
               "cacheWrite": 0,
-              "total": 14261951,
-              "tokens": 14261951,
-              "requests": 35,
-              "costUsd": 9.72481399655342
+              "total": 18274235,
+              "tokens": 18274235,
+              "requests": 40,
+              "costUsd": 12.231702040433884
             },
             "cursor-grok-4.6-high-fast": {
-              "input": 336212,
-              "output": 45030,
-              "cacheRead": 12220800,
+              "input": 760485,
+              "output": 63468,
+              "cacheRead": 13102080,
               "cacheWrite": 0,
-              "total": 12602042,
-              "tokens": 12602042,
-              "requests": 20,
-              "costUsd": 14.106007933616636
+              "total": 13926033,
+              "tokens": 13926033,
+              "requests": 36,
+              "costUsd": 16.90563589096069
             }
           }
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
         },
         "gemini": {
           "input": 0,
@@ -304,25 +364,25 @@
       "date": "2026-08-29",
       "source": "opencode",
       "model": "gemini-3.6-flash",
-      "tokens": 79420,
-      "costUsd": 0.02972205,
-      "requests": 4
+      "tokens": 365389,
+      "costUsd": 0.151994775,
+      "requests": 16
     },
     {
       "date": "2026-08-29",
       "source": "cursor",
       "model": "default",
-      "tokens": 14261951,
-      "costUsd": 9.72481399655342,
-      "requests": 35
+      "tokens": 18274235,
+      "costUsd": 12.231702040433884,
+      "requests": 40
     },
     {
       "date": "2026-08-29",
       "source": "cursor",
       "model": "cursor-grok-4.6-high-fast",
-      "tokens": 12602042,
-      "costUsd": 14.106007933616636,
-      "requests": 20
+      "tokens": 13926033,
+      "costUsd": 16.90563589096069,
+      "requests": 36
     }
   ],
   "collectors": [
@@ -331,7 +391,7 @@
       "dbPath": "/Users/koundinya.pidaparthy/.local/share/opencode/opencode.db",
       "ok": true,
       "skipped": false,
-      "messages": 2141,
+      "messages": 2153,
       "days": 1
     },
     {
@@ -339,7 +399,7 @@
       "mode": "session",
       "ok": true,
       "skipped": false,
-      "events": 138,
+      "events": 159,
       "days": 2,
       "pages": 2
     },
