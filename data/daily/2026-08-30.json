@@ -13,15 +13,36 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
+      "input": 400074,
+      "output": 6542,
+      "cacheRead": 541568,
       "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "total": 948184,
+      "tokens": 948184,
+      "requests": 9,
+      "costUsd": 1.6437139606475828,
+      "byModel": {
+        "cursor-grok-4.6-high-fast": {
+          "input": 211952,
+          "output": 703,
+          "cacheRead": 210816,
+          "cacheWrite": 0,
+          "total": 423471,
+          "tokens": 423471,
+          "requests": 2,
+          "costUsd": 1.0670599555969238
+        },
+        "cursor-grok-4.6-high": {
+          "input": 188122,
+          "output": 5839,
+          "cacheRead": 330752,
+          "cacheWrite": 0,
+          "total": 524713,
+          "tokens": 524713,
+          "requests": 7,
+          "costUsd": 0.5766540050506592
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +57,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 948184,
+    "costUsd": 1.6437139606475828,
+    "requests": 9
   }
 }
