@@ -13,24 +13,54 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 600687,
-      "output": 79655,
-      "cacheRead": 11553984,
+      "input": 4389477,
+      "output": 338557,
+      "cacheRead": 50445103,
       "cacheWrite": 0,
-      "total": 12234326,
-      "tokens": 12234326,
-      "requests": 43,
-      "costUsd": 14.672963469028474,
+      "total": 55173137,
+      "tokens": 55173137,
+      "requests": 117,
+      "costUsd": 52.32909701824188,
       "byModel": {
         "cursor-grok-4.6-high-fast": {
-          "input": 600687,
-          "output": 79655,
-          "cacheRead": 11553984,
+          "input": 1864541,
+          "output": 192499,
+          "cacheRead": 22523456,
           "cacheWrite": 0,
-          "total": 12234326,
-          "tokens": 12234326,
+          "total": 24580496,
+          "tokens": 24580496,
+          "requests": 57,
+          "costUsd": 30.005038177967073
+        },
+        "default": {
+          "input": 1986991,
+          "output": 139114,
+          "cacheRead": 26400111,
+          "cacheWrite": 0,
+          "total": 28526216,
+          "tokens": 28526216,
           "requests": 43,
-          "costUsd": 14.672963469028474
+          "costUsd": 19.921068806648258
+        },
+        "grok-bot-automation": {
+          "input": 333221,
+          "output": 6185,
+          "cacheRead": 1309312,
+          "cacheWrite": 0,
+          "total": 1648718,
+          "tokens": 1648718,
+          "requests": 15,
+          "costUsd": 1.3582080054283143
+        },
+        "grok-bot-default": {
+          "input": 204724,
+          "output": 759,
+          "cacheRead": 212224,
+          "cacheWrite": 0,
+          "total": 417707,
+          "tokens": 417707,
+          "requests": 2,
+          "costUsd": 1.0447820281982423
         }
       }
     },
@@ -47,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 12234326,
-    "costUsd": 14.672963469028474,
-    "requests": 43
+    "tokens": 55173137,
+    "costUsd": 52.32909701824188,
+    "requests": 117
   }
 }
