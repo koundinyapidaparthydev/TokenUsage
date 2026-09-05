@@ -13,54 +13,54 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 5501554,
-      "output": 1168894,
-      "cacheRead": 78936443,
-      "cacheWrite": 223565,
-      "total": 85830456,
-      "tokens": 85830456,
-      "requests": 109,
-      "costUsd": 113.51110422611238,
+      "input": 12221210,
+      "output": 1671855,
+      "cacheRead": 136720505,
+      "cacheWrite": 358043,
+      "total": 150971613,
+      "tokens": 150971613,
+      "requests": 244,
+      "costUsd": 176.2707263398171,
       "byModel": {
-        "cursor-grok-4.6-high-fast": {
-          "input": 5291344,
-          "output": 1148050,
-          "cacheRead": 76241664,
+        "default": {
+          "input": 5122443,
+          "output": 390677,
+          "cacheRead": 37490176,
           "cacheWrite": 0,
-          "total": 82681058,
-          "tokens": 82681058,
-          "requests": 80,
-          "costUsd": 109.9263444709778
+          "total": 43003296,
+          "tokens": 43003296,
+          "requests": 74,
+          "costUsd": 33.84992594003678
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 6753538,
+          "output": 1258345,
+          "cacheRead": 96378560,
+          "cacheWrite": 0,
+          "total": 104390443,
+          "tokens": 104390443,
+          "requests": 112,
+          "costUsd": 137.1543634319306
         },
         "grok-bot-default": {
-          "input": 57086,
-          "output": 719,
-          "cacheRead": 11904,
+          "input": 274970,
+          "output": 5237,
+          "cacheRead": 405504,
           "cacheWrite": 92257,
-          "total": 161966,
-          "tokens": 161966,
-          "requests": 2,
-          "costUsd": 0.8319062614440917
+          "total": 777968,
+          "tokens": 777968,
+          "requests": 11,
+          "costUsd": 2.1512582516670227
         },
         "grok-bot-automation": {
-          "input": 70190,
-          "output": 12875,
-          "cacheRead": 1675387,
-          "cacheWrite": 131308,
-          "total": 1889760,
-          "tokens": 1889760,
-          "requests": 24,
-          "costUsd": 2.03974151134491
-        },
-        "default": {
-          "input": 82934,
-          "output": 7250,
-          "cacheRead": 1007488,
-          "cacheWrite": 0,
-          "total": 1097672,
-          "tokens": 1097672,
-          "requests": 3,
-          "costUsd": 0.713111982345581
+          "input": 70259,
+          "output": 17596,
+          "cacheRead": 2446265,
+          "cacheWrite": 265786,
+          "total": 2799906,
+          "tokens": 2799906,
+          "requests": 47,
+          "costUsd": 3.1151787161827094
         }
       }
     },
@@ -77,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 85830456,
-    "costUsd": 113.51110422611238,
-    "requests": 109
+    "tokens": 150971613,
+    "costUsd": 176.2707263398171,
+    "requests": 244
   }
 }
