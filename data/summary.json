@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-11T16:00:11.657Z",
+  "generatedAt": "2026-09-12T18:05:38.003Z",
   "since": "2026-08-28",
-  "today": "2026-09-11",
+  "today": "2026-09-12",
   "totals": {
     "today": {
-      "tokens": 12578908,
-      "costUsd": 13.317491121292115,
-      "requests": 24
+      "tokens": 0,
+      "costUsd": 0,
+      "requests": 0
     },
     "week": {
-      "tokens": 349688575,
-      "costUsd": 317.0396615457535,
-      "requests": 660
+      "tokens": 337293527,
+      "costUsd": 301.6937423920632,
+      "requests": 637
     },
     "allTime": {
       "tokens": 842701514,
@@ -1542,6 +1542,66 @@
           "byModel": {}
         }
       }
+    },
+    {
+      "date": "2026-09-12",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
     }
   ],
   "models": [
@@ -2030,11 +2090,9 @@
     {
       "source": "cursor",
       "mode": "session",
-      "ok": true,
+      "ok": false,
       "skipped": false,
-      "events": 1587,
-      "days": 15,
-      "pages": 16
+      "reason": "fetch failed"
     },
     {
       "source": "gemini",
