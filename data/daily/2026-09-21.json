@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-21",
+  "sources": {
+    "opencode": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "cursor": {
+      "input": 890735,
+      "output": 43052,
+      "cacheRead": 2293504,
+      "cacheWrite": 0,
+      "total": 3227291,
+      "tokens": 3227291,
+      "requests": 5,
+      "costUsd": 4.121426186561584,
+      "byModel": {
+        "cursor-grok-4.6-high-fast": {
+          "input": 484179,
+          "output": 31233,
+          "cacheRead": 625024,
+          "cacheWrite": 0,
+          "total": 1140436,
+          "tokens": 1140436,
+          "requests": 1,
+          "costUsd": 2.9250051879882815
+        },
+        "default": {
+          "input": 406556,
+          "output": 11819,
+          "cacheRead": 1668480,
+          "cacheWrite": 0,
+          "total": 2086855,
+          "tokens": 2086855,
+          "requests": 4,
+          "costUsd": 1.196420998573303
+        }
+      }
+    },
+    "gemini": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    }
+  },
+  "totals": {
+    "tokens": 3227291,
+    "costUsd": 4.121426186561584,
+    "requests": 5
+  }
+}
