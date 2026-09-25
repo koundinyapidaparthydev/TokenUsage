@@ -13,15 +13,45 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 890735,
-      "output": 43052,
-      "cacheRead": 2293504,
+      "input": 6171283,
+      "output": 231596,
+      "cacheRead": 42355968,
       "cacheWrite": 0,
-      "total": 3227291,
-      "tokens": 3227291,
-      "requests": 5,
-      "costUsd": 4.121426186561584,
+      "total": 48758847,
+      "tokens": 48758847,
+      "requests": 101,
+      "costUsd": 36.40580408096312,
       "byModel": {
+        "default": {
+          "input": 5310460,
+          "output": 194643,
+          "cacheRead": 41392768,
+          "cacheWrite": 0,
+          "total": 46897871,
+          "tokens": 46897871,
+          "requests": 91,
+          "costUsd": 31.963316879272455
+        },
+        "grok-bot-default": {
+          "input": 259315,
+          "output": 1785,
+          "cacheRead": 41472,
+          "cacheWrite": 0,
+          "total": 302572,
+          "tokens": 302572,
+          "requests": 2,
+          "costUsd": 1.1108620071411133
+        },
+        "grok-bot-automation": {
+          "input": 117329,
+          "output": 3935,
+          "cacheRead": 296704,
+          "cacheWrite": 0,
+          "total": 417968,
+          "tokens": 417968,
+          "requests": 7,
+          "costUsd": 0.4066200065612793
+        },
         "cursor-grok-4.6-high-fast": {
           "input": 484179,
           "output": 31233,
@@ -31,16 +61,6 @@
           "tokens": 1140436,
           "requests": 1,
           "costUsd": 2.9250051879882815
-        },
-        "default": {
-          "input": 406556,
-          "output": 11819,
-          "cacheRead": 1668480,
-          "cacheWrite": 0,
-          "total": 2086855,
-          "tokens": 2086855,
-          "requests": 4,
-          "costUsd": 1.196420998573303
         }
       }
     },
@@ -57,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 3227291,
-    "costUsd": 4.121426186561584,
-    "requests": 5
+    "tokens": 48758847,
+    "costUsd": 36.40580408096312,
+    "requests": 101
   }
 }

@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-25",
+  "sources": {
+    "opencode": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "cursor": {
+      "input": 1252805,
+      "output": 96184,
+      "cacheRead": 19083584,
+      "cacheWrite": 0,
+      "total": 20432573,
+      "tokens": 20432573,
+      "requests": 31,
+      "costUsd": 20.020861084461213,
+      "byModel": {
+        "grok-bot-default": {
+          "input": 29683,
+          "output": 226,
+          "cacheRead": 21632,
+          "cacheWrite": 0,
+          "total": 51541,
+          "tokens": 51541,
+          "requests": 1,
+          "costUsd": 0.1444320011138916
+        },
+        "grok-bot-automation": {
+          "input": 45870,
+          "output": 3584,
+          "cacheRead": 260736,
+          "cacheWrite": 0,
+          "total": 310190,
+          "tokens": 310190,
+          "requests": 8,
+          "costUsd": 0.243612003326416
+        },
+        "grok-4.7-high-fast": {
+          "input": 496661,
+          "output": 41667,
+          "cacheRead": 10066944,
+          "cacheWrite": 0,
+          "total": 10605272,
+          "tokens": 10605272,
+          "requests": 10,
+          "costUsd": 12.553591957092284
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 128306,
+          "output": 27896,
+          "cacheRead": 1268416,
+          "cacheWrite": 0,
+          "total": 1424618,
+          "tokens": 1424618,
+          "requests": 1,
+          "costUsd": 2.104861145019531
+        },
+        "default": {
+          "input": 552285,
+          "output": 22811,
+          "cacheRead": 7465856,
+          "cacheWrite": 0,
+          "total": 8040952,
+          "tokens": 8040952,
+          "requests": 11,
+          "costUsd": 4.974363977909088
+        }
+      }
+    },
+    "gemini": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    }
+  },
+  "totals": {
+    "tokens": 20432573,
+    "costUsd": 20.020861084461213,
+    "requests": 31
+  }
+}

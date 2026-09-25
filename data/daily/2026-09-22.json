@@ -13,15 +13,76 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
+      "input": 5723338,
+      "output": 222730,
+      "cacheRead": 41685415,
       "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "total": 47631483,
+      "tokens": 47631483,
+      "requests": 131,
+      "costUsd": 34.30462258815765,
+      "byModel": {
+        "default": {
+          "input": 5243837,
+          "output": 172151,
+          "cacheRead": 38019008,
+          "cacheWrite": 0,
+          "total": 43434996,
+          "tokens": 43434996,
+          "requests": 120,
+          "costUsd": 30.677886967658985
+        },
+        "composer-2.5-fast": {
+          "input": 61433,
+          "output": 9892,
+          "cacheRead": 1178912,
+          "cacheWrite": 0,
+          "total": 1250237,
+          "tokens": 1250237,
+          "requests": 1,
+          "costUsd": 0.922135009765625
+        },
+        "grok-bot-default": {
+          "input": 18200,
+          "output": 244,
+          "cacheRead": 20864,
+          "cacheWrite": 0,
+          "total": 39308,
+          "tokens": 39308,
+          "requests": 1,
+          "costUsd": 0.098056001663208
+        },
+        "grok-bot-automation": {
+          "input": 139494,
+          "output": 3628,
+          "cacheRead": 417536,
+          "cacheWrite": 0,
+          "total": 560658,
+          "tokens": 560658,
+          "requests": 7,
+          "costUsd": 0.5095240020751953
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 119527,
+          "output": 25674,
+          "cacheRead": 934848,
+          "cacheWrite": 0,
+          "total": 1080049,
+          "tokens": 1080049,
+          "requests": 1,
+          "costUsd": 1.7095132446289063
+        },
+        "kimi-k2.7-code": {
+          "input": 140847,
+          "output": 11141,
+          "cacheRead": 1114247,
+          "cacheWrite": 0,
+          "total": 1266235,
+          "tokens": 1266235,
+          "requests": 1,
+          "costUsd": 0.38750736236572264
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +97,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 47631483,
+    "costUsd": 34.30462258815765,
+    "requests": 131
   }
 }
