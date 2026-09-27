@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-26T16:18:37.436Z",
+  "generatedAt": "2026-09-27T16:36:12.771Z",
   "since": "2026-08-28",
-  "today": "2026-09-26",
+  "today": "2026-09-27",
   "totals": {
     "today": {
       "tokens": 0,
@@ -9,9 +9,9 @@
       "requests": 0
     },
     "week": {
-      "tokens": 217225416,
-      "costUsd": 162.04272313833232,
-      "requests": 511
+      "tokens": 215056917,
+      "costUsd": 158.6180900239944,
+      "requests": 502
     },
     "allTime": {
       "tokens": 1404594937,
@@ -3019,6 +3019,66 @@
     },
     {
       "date": "2026-09-26",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
+    },
+    {
+      "date": "2026-09-27",
       "totals": {
         "tokens": 0,
         "costUsd": 0,
