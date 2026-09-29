@@ -13,15 +13,56 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "input": 362038,
+      "output": 304565,
+      "cacheRead": 49712242,
+      "cacheWrite": 4587989,
+      "total": 54966834,
+      "tokens": 54966834,
+      "requests": 103,
+      "costUsd": 37.9966581463814,
+      "byModel": {
+        "default": {
+          "input": 1000,
+          "output": 262131,
+          "cacheRead": 47406386,
+          "cacheWrite": 4587989,
+          "total": 52257506,
+          "tokens": 52257506,
+          "requests": 82,
+          "costUsd": 34.453956811428085
+        },
+        "grok-bot-default": {
+          "input": 33780,
+          "output": 361,
+          "cacheRead": 21632,
+          "cacheWrite": 0,
+          "total": 55773,
+          "tokens": 55773,
+          "requests": 1,
+          "costUsd": 0.16325000762939454
+        },
+        "grok-bot-automation": {
+          "input": 154205,
+          "output": 14398,
+          "cacheRead": 624704,
+          "cacheWrite": 0,
+          "total": 793307,
+          "tokens": 793307,
+          "requests": 19,
+          "costUsd": 0.7071499967575071
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 173053,
+          "output": 27675,
+          "cacheRead": 1659520,
+          "cacheWrite": 0,
+          "total": 1860248,
+          "tokens": 1860248,
+          "requests": 1,
+          "costUsd": 2.6723013305664063
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 54966834,
+    "costUsd": 37.9966581463814,
+    "requests": 103
   }
 }
