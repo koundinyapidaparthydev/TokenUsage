@@ -13,34 +13,34 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 3551151,
-      "output": 281003,
-      "cacheRead": 45051904,
+      "input": 4630878,
+      "output": 365566,
+      "cacheRead": 60470592,
       "cacheWrite": 0,
-      "total": 48884058,
-      "tokens": 48884058,
-      "requests": 83,
-      "costUsd": 48.56633655518293,
+      "total": 65467036,
+      "tokens": 65467036,
+      "requests": 121,
+      "costUsd": 64.18294297188518,
       "byModel": {
         "cursor-grok-4.6-high-fast": {
-          "input": 1934681,
-          "output": 197475,
-          "cacheRead": 24492288,
+          "input": 2374055,
+          "output": 259829,
+          "cacheRead": 32531712,
           "cacheWrite": 0,
-          "total": 26624444,
-          "tokens": 26624444,
-          "requests": 32,
-          "costUsd": 34.44592160671949
+          "total": 35165596,
+          "tokens": 35165596,
+          "requests": 52,
+          "costUsd": 44.953356518447386
         },
         "default": {
-          "input": 1290351,
-          "output": 78625,
-          "cacheRead": 19617536,
+          "input": 1930704,
+          "output": 100834,
+          "cacheRead": 26996800,
           "cacheWrite": 0,
-          "total": 20986512,
-          "tokens": 20986512,
-          "requests": 39,
-          "costUsd": 12.967718966007233
+          "total": 29028338,
+          "tokens": 29028338,
+          "requests": 57,
+          "costUsd": 18.0768904709816
         },
         "cursor-grok-4.6-high": {
           "input": 209139,
@@ -77,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 48884058,
-    "costUsd": 48.56633655518293,
-    "requests": 83
+    "tokens": 65467036,
+    "costUsd": 64.18294297188518,
+    "requests": 121
   }
 }

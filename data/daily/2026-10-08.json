@@ -13,15 +13,26 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
+      "input": 332946,
+      "output": 37360,
+      "cacheRead": 1866880,
       "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "total": 2237186,
+      "tokens": 2237186,
+      "requests": 1,
+      "costUsd": 2.3206480407714842,
+      "byModel": {
+        "cursor-grok-4.6-high-fast": {
+          "input": 332946,
+          "output": 37360,
+          "cacheRead": 1866880,
+          "cacheWrite": 0,
+          "total": 2237186,
+          "tokens": 2237186,
+          "requests": 1,
+          "costUsd": 2.3206480407714842
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +47,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 2237186,
+    "costUsd": 2.3206480407714842,
+    "requests": 1
   }
 }

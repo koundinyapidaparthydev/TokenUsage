@@ -13,15 +13,56 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "input": 123104,
+      "output": 62090,
+      "cacheRead": 6681555,
+      "cacheWrite": 908323,
+      "total": 7775072,
+      "tokens": 7775072,
+      "requests": 21,
+      "costUsd": 7.06123867034912,
+      "byModel": {
+        "claude-opus-5-5-low": {
+          "input": 4,
+          "output": 477,
+          "cacheRead": 0,
+          "cacheWrite": 99348,
+          "total": 99829,
+          "tokens": 99829,
+          "requests": 1,
+          "costUsd": 0.5062960052490234
+        },
+        "grok-bot-automation": {
+          "input": 14,
+          "output": 2561,
+          "cacheRead": 249486,
+          "cacheWrite": 60231,
+          "total": 312292,
+          "tokens": 312292,
+          "requests": 6,
+          "costUsd": 0.26059899806976317
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 122972,
+          "output": 34134,
+          "cacheRead": 1082240,
+          "cacheWrite": 0,
+          "total": 1239346,
+          "tokens": 1239346,
+          "requests": 1,
+          "costUsd": 1.9722052001953125
+        },
+        "default": {
+          "input": 114,
+          "output": 24918,
+          "cacheRead": 5349829,
+          "cacheWrite": 748744,
+          "total": 6123605,
+          "tokens": 6123605,
+          "requests": 13,
+          "costUsd": 4.322138466835022
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +77,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 7775072,
+    "costUsd": 7.06123867034912,
+    "requests": 21
   }
 }
