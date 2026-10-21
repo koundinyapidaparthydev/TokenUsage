@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-21",
+  "sources": {
+    "opencode": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    },
+    "cursor": {
+      "input": 151535,
+      "output": 14994,
+      "cacheRead": 3233664,
+      "cacheWrite": 0,
+      "total": 3400193,
+      "tokens": 3400193,
+      "requests": 3,
+      "costUsd": 2.0098660278320315,
+      "byModel": {
+        "default": {
+          "input": 151535,
+          "output": 14994,
+          "cacheRead": 3233664,
+          "cacheWrite": 0,
+          "total": 3400193,
+          "tokens": 3400193,
+          "requests": 3,
+          "costUsd": 2.0098660278320315
+        }
+      }
+    },
+    "gemini": {
+      "input": 0,
+      "output": 0,
+      "cacheRead": 0,
+      "cacheWrite": 0,
+      "total": 0,
+      "tokens": 0,
+      "requests": 0,
+      "costUsd": 0,
+      "byModel": {}
+    }
+  },
+  "totals": {
+    "tokens": 3400193,
+    "costUsd": 2.0098660278320315,
+    "requests": 3
+  }
+}
