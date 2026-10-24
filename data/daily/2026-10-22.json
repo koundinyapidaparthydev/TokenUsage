@@ -13,15 +13,66 @@
       "byModel": {}
     },
     "cursor": {
-      "input": 0,
-      "output": 0,
-      "cacheRead": 0,
-      "cacheWrite": 0,
-      "total": 0,
-      "tokens": 0,
-      "requests": 0,
-      "costUsd": 0,
-      "byModel": {}
+      "input": 2851412,
+      "output": 328820,
+      "cacheRead": 50514946,
+      "cacheWrite": 84121,
+      "total": 53779299,
+      "tokens": 53779299,
+      "requests": 150,
+      "costUsd": 34.05555407047272,
+      "byModel": {
+        "default": {
+          "input": 2716398,
+          "output": 290905,
+          "cacheRead": 49230208,
+          "cacheWrite": 0,
+          "total": 52237511,
+          "tokens": 52237511,
+          "requests": 141,
+          "costUsd": 31.793329944610598
+        },
+        "grok-4.7-high-fast": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 1,
+          "costUsd": 0
+        },
+        "grok-bot-default": {
+          "input": 4,
+          "output": 354,
+          "cacheRead": 18610,
+          "cacheWrite": 31343,
+          "total": 50311,
+          "tokens": 50311,
+          "requests": 1,
+          "costUsd": 0.07412300109863282
+        },
+        "grok-bot-automation": {
+          "input": 14,
+          "output": 2373,
+          "cacheRead": 295824,
+          "cacheWrite": 52778,
+          "total": 350989,
+          "tokens": 350989,
+          "requests": 6,
+          "costUsd": 0.267733998298645
+        },
+        "cursor-grok-4.6-high-fast": {
+          "input": 134996,
+          "output": 35188,
+          "cacheRead": 970304,
+          "cacheWrite": 0,
+          "total": 1140488,
+          "tokens": 1140488,
+          "requests": 1,
+          "costUsd": 1.9203671264648436
+        }
+      }
     },
     "gemini": {
       "input": 0,
@@ -36,8 +87,8 @@
     }
   },
   "totals": {
-    "tokens": 0,
-    "costUsd": 0,
-    "requests": 0
+    "tokens": 53779299,
+    "costUsd": 34.05555407047272,
+    "requests": 150
   }
 }
