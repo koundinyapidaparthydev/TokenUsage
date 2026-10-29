@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-28T04:23:38.986Z",
+  "generatedAt": "2026-10-29T03:31:31.207Z",
   "since": "2026-08-28",
-  "today": "2026-10-27",
+  "today": "2026-10-28",
   "totals": {
     "today": {
       "tokens": 0,
@@ -9,9 +9,9 @@
       "requests": 0
     },
     "week": {
-      "tokens": 148721313,
-      "costUsd": 108.99187614083287,
-      "requests": 363
+      "tokens": 73139451,
+      "costUsd": 54.62079722642899,
+      "requests": 185
     },
     "allTime": {
       "tokens": 2345726532,
@@ -5994,6 +5994,66 @@
           "byModel": {}
         }
       }
+    },
+    {
+      "date": "2026-10-28",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
     }
   ],
   "models": [
@@ -7804,7 +7864,7 @@
       "mode": "session",
       "ok": false,
       "skipped": false,
-      "reason": "fetch failed"
+      "reason": "Cursor dashboard 401: {\"error\":\"not_authenticated\",\"description\":\"Please login to access this resource.\"}"
     },
     {
       "source": "gemini",
