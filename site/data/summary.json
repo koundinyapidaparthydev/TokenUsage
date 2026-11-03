@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-02T03:38:15.448Z",
+  "generatedAt": "2026-11-03T17:04:07.968Z",
   "since": "2026-08-28",
-  "today": "2026-11-01",
+  "today": "2026-11-03",
   "totals": {
     "today": {
       "tokens": 0,
@@ -6294,6 +6294,126 @@
           "byModel": {}
         }
       }
+    },
+    {
+      "date": "2026-11-02",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
+    },
+    {
+      "date": "2026-11-03",
+      "totals": {
+        "tokens": 0,
+        "costUsd": 0,
+        "requests": 0
+      },
+      "bySource": {
+        "opencode": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "cursor": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        },
+        "gemini": {
+          "tokens": 0,
+          "costUsd": 0,
+          "requests": 0
+        }
+      },
+      "sources": {
+        "opencode": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "cursor": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        },
+        "gemini": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "tokens": 0,
+          "requests": 0,
+          "costUsd": 0,
+          "byModel": {}
+        }
+      }
     }
   ],
   "models": [
@@ -8104,7 +8224,7 @@
       "mode": "session",
       "ok": false,
       "skipped": false,
-      "reason": "Cursor dashboard 401: {\"error\":\"not_authenticated\",\"description\":\"Please login to access this resource.\"}"
+      "reason": "fetch failed"
     },
     {
       "source": "gemini",
